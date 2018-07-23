@@ -1,0 +1,207 @@
+.ui-dialog .ui-dialog-title {
+    float: left;
+    margin: .1em 0;
+    white-space: nowrap;
+    width: 90%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 18px;
+    text-align: center;
+    color: white;
+}
+
+.validateTips {
+    text-align: center;
+    margin-bottom: 21px;
+    margin-top: 76px;
+    margin-left: 15px;
+    margin-right: 15px;
+    font-weight: 300;
+}   
+
+.validateTips + p {
+    text-align: center;
+    margin-bottom: 21px;
+    margin-top: 22px;
+    font-weight: 300;
+}
+
+.ui-dialog .ui-dialog-buttonpane button {
+    border: 6px solid #212B52 !important;
+    background: #212B52 !important;
+    color: white !important;
+    font-weight: normal;
+    /*height: 10% !important;*/
+    margin-top: -2rem !important;
+    width: 180px !important;
+}
+.ui-dialog .ui-dialog-buttonpane button:hover {
+    border: 6px solid #f8ac31 !important;
+    background: #f8ac31 !important;
+    color: #212B52 !important;
+    font-weight: normal;
+    margin-top : -2rem !important;
+    width: 180px !important;
+}
+
+.form-select{    
+    border: 0 !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    /* Some browsers will not display the caret when using calc, so we put the fallback first */ 
+    background: url("../../images/FLECHE.svg") white no-repeat 50.5% !important; /* !important used for overriding all other customisations */
+    background: url("../../images/FLECHE.svg") white no-repeat calc(100% - 10px) !important; /* Better placement regardless of input width */
+    background-size: 26% !important;
+}
+
+#search-store fieldset .row {
+    width: 100% !important;
+}
+
+#search-store fieldset .row label {
+    margin-left: -2%;
+    margin-right: -7%;
+    margin-top: 1.1%;
+    text-align: center;
+    font-weight: 300;
+}
+
+.centerButton {
+    margin-left: -30% !important;
+}
+
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset {
+    float: right !important;
+    margin-right: 27% !important;
+    text-align: center;
+    font-size: 11px;
+}
+
+.ui-widget .ui-widget {
+    font-size: 1.4em !important;
+}
+
+.ui-widget-content {
+    border: none !important;
+ }
+
+
+#dialog-position h3, #dialog-position2 h3{
+    text-align: center;
+    margin-top: 26px;
+    margin-bottom: -50px;
+}
+
+#fermer-dialog, #fermer-dialog2 {
+    font-size: 17px;
+    float: right;
+}
+
+.ui-dialog .ui-dialog-buttonpane {
+    margin-top: -50px !important;
+    margin-bottom: 40px !important;
+    padding: none !important;
+}
+
+#postal_code, #postal_code2 {
+    width: 121%;
+    border: 1px solid #212B52;
+    outline: none;
+    display: block;
+    height: 42px;
+    padding: 6px 8px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: black;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 7px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+}
+
+.ui-widget-content a {
+   color: #212b52 !important;
+   font-weight: 600;
+   text-decoration: none;
+}
+
+.ui-widget-content a:hover{
+   color: #f8ac31 !important;
+   font-weight: 600;
+   text-decoration: none;
+}
+
+::-webkit-input-placeholder {
+   color: #D2D2CD;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #D2D2CD;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #D2D2CD;  
+}
+
+:-ms-input-placeholder {  
+   color: #D2D2CD;  
+}
+
+@media  (max-width: 991px) {
+    .ui-dialog.ui-corner-all.ui-widget.ui-widget-content.ui-front.ui-dialog-buttons.ui-draggable.ui-resizable{
+        position: absolute !important;
+        height: auto !important;
+        width: 70vw !important;
+        top: -18rem !important;
+        left: -36vw !important;
+        display: block !important;
+        z-index: 101 !important;
+    }
+}
+
+@media (min-width: 516px) and (max-width: 991px){
+    .ui-dialog .ui-dialog-buttonpane button {
+        border: 6px solid #212B52 !important;
+        background: #212B52 !important;
+        color: white !important;
+        font-weight: normal;
+        margin-top: -2rem !important;
+        width: auto !important;
+    }
+}
+
+@media (max-width: 515px){
+    .ui-dialog .ui-dialog-buttonpane button {
+        border: 6px solid #212B52 !important;
+        background: #212B52 !important;
+        color: white !important;
+        font-weight: normal;
+        height: 11vw !important;
+        margin-top: 2rem !important;
+        left: 19vw;
+    }
+
+    #dialog-position, #dialog-position2{
+        height: 384px !important;
+    }
+
+    #search-store{
+        margin-top:-2rem;
+    }
+    #postal_code{
+        height: 8vw;
+        font-size: 3vw;
+    }
+    #search-store fieldset .row label {
+    font-size: 9px !important;
+    }
+}
+
+

@@ -1,0 +1,118 @@
+MDP BD: N{sB7m7s+9
+ORDRE DE PRIORITE
+        - 1 => Maika
+        - 2 => Afaka miandry
+        - 3 => Atao rehefa malalaka
+-------------------------------------------------------------------------
+
+A FAIRE
+- Le scroll dans customer (3)
+- Responsivité de la description produit (2)
+- Redirection marchant vers login si non connecté (3)
+- Liste des souhaits bug quand elle n'est pas vide
+- Ne peut pas scroller avant le popup area => Centrer le popup
+- 
+
+
+
+BUG : 
+- Encaissement : choix de produit pour le pyjama rose (2) 
+- URL GET -> POST pour plus de sécurité (2)
+
+BUG causé par la nouvelle maquette produit:
+- product (front) (en cours)
+- ajout au pannier (front) (OK)
+- commande en cours (customer) (OK)
+- historique commande (customer) (OK)
+- coupon (OK)
+)
+--------------------------------------------------------------------------
+
+21-06-2018
+
+COMPTE PRO : MES PRODUITS 
+
+LISTE DES PRODUITS
+
+- Fonctionnalité:
+      
+      -  -> ajout filtre dans liste produit
+        
+ENREGISTREMENT DU PRODUIT
+
+- Integartion interface:
+        -> amelioration interface formulaire:
+            - Suppression image
+            - suppression declinaison
+
+
+    REQUETE KELY :
+         select  * from product_stock_attribute_option join product_stock on product_stock.product_stock_id = product_stock_attribute_option.product_stock_id
+        where product_id=4418 and product_stock_attribute_option.product_stock_id in(49, 51, 52)
+
+    QUELQUE DESCRIPTION DES TABLES                   
+           
+                        ** product **
+                        +-------------------+------------------+------+-----+---------+----------------+
+                        | Field             | Type             | Null | Key | Default | Extra          |
+                        +-------------------+------------------+------+-----+---------+----------------+
+                        | product_id        | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+                        | store_id          | int(11)          | YES  |     | NULL    |                |*
+                        |brand_id->brand_name | varchar(10)    | YES  | MUL | NULL    |                |*
+                        | original_price    | decimal(12,2)    | NO   |     | NULL    |                |*
+Tarif promotionnel =>   | promotional_price | decimal(12,2)    | NO   |     | NULL    |                |*
+                        | is_active         | tinyint(4)       | NO   | MUL | NULL    |                |*
+                        | attribute_set_id  | int(10) unsigned | YES  | MUL | NULL    |                |
+                        | created_by        | int(10) unsigned | YES  | MUL | NULL    |                |
+                        | modified_by       | int(10) unsigned | YES  | MUL | NULL    |                |
+                        | created_at        | timestamp        | YES  |     | NULL    |                |
+                        | updated_at        | timestamp        | YES  |     | NULL    |                |
+Gamme =>                | range             | varchar(191)     | YES  |     | NULL    |                |
+Soldé =>                | balance           | tinyint(4)       | YES  |     | NULL    |                |
+Réduction =>            | discount          | tinyint(4)       | YES  |     | NULL    |                |
+                        +-------------------+------------------+------+-----+---------+----------------+
+                        
+                        ** product_translation **
+                        +------------------------+------------------+------+-----+---------+----------------+
+                        | Field                  | Type             | Null | Key | Default | Extra          |
+                        +------------------------+------------------+------+-----+---------+----------------+
+                        | product_translation_id | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+                        | product_id             | int(10) unsigned | NO   | MUL | NULL    |                |*
+                        | product_name           | varchar(191)     | YES  |     | NULL    |                |*
+                        | description            | longtext         | YES  |     | NULL    |                |*
+                        | meta_title             | varchar(191)     | YES  |     | NULL    |                |*
+                        | meta_description       | text             | YES  |     | NULL    |                |*
+                        | user_id                | int(11)          | NO   |     | NULL    |                |*
+Conseils d'entretien => | meta_advice            | text             | NO   |     | NULL    |                |
+                        +------------------------+------------------+------+-----+---------+----------------+
+                        
+                        ** product_stock **             
+                        +-------------------------+------------------+------+-----+---------+----------------+
+                        | Field                   | Type             | Null | Key | Default | Extra          |
+                        +-------------------------+------------------+------+-----+---------+----------------+
+                        | product_stock_id        | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+                        | product_id              | int(10) unsigned | NO   | MUL | NULL    |                |
+                        | store_id                | int(10) unsigned | NO   | MUL | NULL    |                |
+Inventaire =>           | product_count           | int(11)          | NO   |     | NULL    |                |
+                        | product_stock_status_id | int(10) unsigned | NO   |     | NULL    |                |
+                        +-------------------------+------------------+------+-----+---------+----------------+
+EE                
+                        ** product_stock_attribute_option **(ato tokon hisy attribute_id)-> efa OK
+                        +-----------------------------------+------------------+------+-----+---------+----------------+
+                        | Field                             | Type             | Null | Key | Default | Extra          |
+                        +-----------------------------------+------------------+------+-----+---------+----------------+
+                        | product_stock_attribute_option_id | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+                        | product_stock_id                  | int(10) unsigned | NO   |     | NULL    |                |
+                        | attribute_option_id               | int(10) unsigned | NO   |     | NULL    |                |
+                        | attribute_id                      | int(10) unsigned | NO   |     | NULL    |                |
+                        +-----------------------------------+------------------+------+-----+---------+----------------+
+                        
+                        ** product_stock_status **    // Ato no misy anle Status stock
+                        +-------------------------+------------------+------+-----+---------+----------------+
+                        | Field                   | Type             | Null | Key | Default | Extra          |
+                        +-------------------------+------------------+------+-----+---------+----------------+
+                        | product_stock_status_id | int(10) unsigned | NO   | PRI | NULL    | auto_increment |
+                        | status_name             | varchar(191)     | NO   |     | NULL    |                |
+                        +-------------------------+------------------+------+-----+---------+----------------+
+                        
+                        
